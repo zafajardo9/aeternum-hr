@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { mainNavLinks, footerServiceLinks, footerLegalLinks } from "@/lib/nav-links";
 
 export default function Footer() {
   return (
@@ -8,15 +10,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="mb-4">
-              <span
-                className="text-xl font-bold tracking-tight text-white block"
-                style={{ fontFamily: "var(--font-manrope)" }}
-              >
-                Aeternum
-              </span>
-              <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "#fed65b" }}>
-                Talent Solutions
-              </span>
+              <Image
+                src="/images/ATS-lgoo-2.png"
+                alt="Aeternum Talent Solutions"
+                width={160}
+                height={48}
+                className="h-auto"
+                priority
+              />
             </div>
             <p className="text-sm text-white/60 leading-relaxed">
               Elevating global operations through architectural talent solutions and high-performance offshore teams.
@@ -32,14 +33,7 @@ export default function Footer() {
               Navigation
             </h3>
             <ul className="space-y-3">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/about", label: "About Us" },
-                { href: "/services", label: "Services" },
-                { href: "/why-aeternum", label: "Why Aeternum" },
-                { href: "/process", label: "Process" },
-                { href: "/faqs", label: "FAQs" },
-              ].map((link) => (
+              {mainNavLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -61,20 +55,13 @@ export default function Footer() {
               Services
             </h3>
             <ul className="space-y-3">
-              {[
-                "Customer Support",
-                "Sales Support",
-                "Virtual Assistants",
-                "Ecommerce Support",
-                "Admin & Back Office",
-                "Retention Teams",
-              ].map((service) => (
-                <li key={service}>
+              {footerServiceLinks.map((link) => (
+                <li key={link.label}>
                   <Link
-                    href="/services"
+                    href={link.href}
                     className="text-sm text-white/70 hover:text-white transition-colors"
                   >
-                    {service}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -90,18 +77,16 @@ export default function Footer() {
               Legal
             </h3>
             <ul className="space-y-3">
-              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
-                (item) => (
-                  <li key={item}>
-                    <Link
-                      href="#"
-                      className="text-sm text-white/70 hover:text-white transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                )
-              )}
+              {footerLegalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/70 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

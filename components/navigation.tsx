@@ -1,18 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/why-aeternum", label: "Why Aeternum" },
-  { href: "/process", label: "Process" },
-  { href: "/faqs", label: "FAQs" },
-];
+import { mainNavLinks } from "@/lib/nav-links";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -32,24 +25,20 @@ export default function Navigation() {
         }}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span
-            className="text-lg font-bold tracking-tight text-white"
-            style={{ fontFamily: "var(--font-manrope)" }}
-          >
-            Aeternum
-          </span>
-          <span
-            className="text-xs font-semibold uppercase tracking-widest hidden sm:block"
-            style={{ color: "#fed65b" }}
-          >
-            Talent Solutions
-          </span>
+        <Link href="/" className="flex items-center shrink-0">
+          <Image
+            src="/images/ATS-logo-1.png"
+            alt="Aeternum Talent Solutions"
+            width={140}
+            height={40}
+            className="h-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
         <ul className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) => {
+          {mainNavLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <li key={link.href}>
@@ -106,7 +95,7 @@ export default function Navigation() {
           }}
         >
           <ul className="flex flex-col gap-1 mb-4">
-            {navLinks.map((link) => {
+            {mainNavLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <li key={link.href}>

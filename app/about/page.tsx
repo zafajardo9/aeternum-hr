@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
@@ -36,11 +37,11 @@ const quality = [
   },
 ];
 
-const team = [
-  { name: "Marcus Thorne", role: "Chief Executive Officer" },
-  { name: "Elena Rodriguez", role: "Head of Global Talent" },
-  { name: "Julian Vance", role: "Director of Strategic Accounts" },
-  { name: "Sarah Chen", role: "VP of Operations" },
+const team: { name: string; role: string; profile_image_url: string | null }[] = [
+  { name: "Marcus Thorne", role: "Chief Executive Officer", profile_image_url: null },
+  { name: "Elena Rodriguez", role: "Head of Global Talent", profile_image_url: null },
+  { name: "Julian Vance", role: "Director of Strategic Accounts", profile_image_url: null },
+  { name: "Sarah Chen", role: "VP of Operations", profile_image_url: null },
 ];
 
 export default function AboutPage() {
@@ -337,11 +338,20 @@ export default function AboutPage() {
                     boxShadow: "0 0 60px rgba(26,27,32,0.05)",
                   }}
                 >
-                  <div
-                    className="w-20 h-20 rounded-2xl mx-auto mb-5 flex items-center justify-center"
-                    style={{ backgroundColor: "#00113a" }}
-                  >
-                    <Users size={32} style={{ color: "#fed65b" }} />
+                  <div className="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden shrink-0 relative" style={{ backgroundColor: "#00113a" }}>
+                    {member.profile_image_url ? (
+                      <Image
+                        src={member.profile_image_url}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                        sizes="96px"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <Users size={32} style={{ color: "#fed65b" }} />
+                      </div>
+                    )}
                   </div>
                   <h3
                     className="font-bold text-[#00113a] mb-1"

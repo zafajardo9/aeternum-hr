@@ -106,11 +106,19 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           }}
         />
       </button>
-      {open && (
-        <div className="px-8 pb-8">
-          <p className="text-sm text-[#44464f] leading-relaxed">{a}</p>
+      <div
+        className="grid transition-all duration-300 ease-in-out"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <div
+            className="px-8 pb-8 transition-opacity duration-300"
+            style={{ opacity: open ? 1 : 0 }}
+          >
+            <p className="text-sm text-[#44464f] leading-relaxed">{a}</p>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
