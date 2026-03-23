@@ -48,7 +48,7 @@ const team: { name: string; role: string; profile_image_url: string | null }[] =
   [
     {
       name: "Diana Rose Arcabal",
-      role: "asdfasdfadf",
+      role: "Operations Coordinator",
       profile_image_url: "/images/team/diana-arcabal.png",
     },
     {

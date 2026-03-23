@@ -1,7 +1,14 @@
 import Link from "next/link";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { ArrowRight, CheckCircle, MessageSquare, TrendingUp, ShoppingBag, Calendar } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  MessageSquare,
+  TrendingUp,
+  ShoppingBag,
+  Calendar,
+} from "lucide-react";
 
 const services = [
   {
@@ -10,7 +17,12 @@ const services = [
     subtitle: "24/7 World-Class Experiences",
     description:
       "Deliver exceptional customer experiences around the clock. Our agents are trained in empathetic communication, technical troubleshooting, and high-volume ticket management.",
-    features: ["98% CSAT Targets", "Multi-channel: Voice, Chat, Email", "Technical & general support", "Escalation management"],
+    features: [
+      "98% CSAT Targets",
+      "Multi-channel: Voice, Chat, Email",
+      "Technical & general support",
+      "Escalation management",
+    ],
     who: "Ecommerce brands, SaaS companies, subscription businesses",
   },
   {
@@ -19,7 +31,12 @@ const services = [
     subtitle: "Fuel Your Revenue Pipeline",
     description:
       "Aggressive, results-driven professionals focused on filling your pipeline and driving revenue. From lead qualification to CRM management and outreach coordination.",
-    features: ["Lead Prospecting & Qualification", "Appointment Setting", "CRM Management", "Pipeline Reporting"],
+    features: [
+      "Lead Prospecting & Qualification",
+      "Appointment Setting",
+      "CRM Management",
+      "Pipeline Reporting",
+    ],
     who: "Coaches, agencies, B2B companies, growth-stage startups",
   },
   {
@@ -28,7 +45,12 @@ const services = [
     subtitle: "Reclaim Your Time",
     description:
       "Elite assistants who handle complex scheduling, travel logistics, email filtering, and project coordination with surgical precision — as if they were in the office next to you.",
-    features: ["40+ hours saved weekly", "Zero-inbox strategy", "Calendar & travel management", "Project coordination"],
+    features: [
+      "40+ hours saved weekly",
+      "Zero-inbox strategy",
+      "Calendar & travel management",
+      "Project coordination",
+    ],
     who: "Founders, executives, busy entrepreneurs, consultants",
   },
   {
@@ -37,7 +59,12 @@ const services = [
     subtitle: "Marketplace Optimization",
     description:
       "Inventory management, order processing, marketplace optimization, and customer returns handling for Amazon, Shopify, and multi-channel ecommerce operations.",
-    features: ["Order processing & fulfillment", "Amazon & Shopify management", "Returns & disputes", "Inventory tracking"],
+    features: [
+      "Order processing & fulfillment",
+      "Amazon & Shopify management",
+      "Returns & disputes",
+      "Inventory tracking",
+    ],
     who: "Ecommerce store owners, Amazon sellers, DTC brands",
   },
   {
@@ -46,7 +73,12 @@ const services = [
     subtitle: "Operational Precision",
     description:
       "Streamline your back-office with dedicated admin professionals handling data entry, document management, reporting, and operational support tasks.",
-    features: ["Data entry & management", "Document preparation", "Reporting & analytics", "Process documentation"],
+    features: [
+      "Data entry & management",
+      "Document preparation",
+      "Reporting & analytics",
+      "Process documentation",
+    ],
     who: "Service businesses, agencies, healthcare, financial services",
   },
   {
@@ -55,7 +87,12 @@ const services = [
     subtitle: "Reduce Churn. Drive Loyalty.",
     description:
       "Specialized teams focused on customer retention, win-back campaigns, satisfaction monitoring, and building the loyalty programs that keep clients coming back.",
-    features: ["Churn reduction strategies", "Win-back campaigns", "NPS monitoring", "Loyalty program support"],
+    features: [
+      "Churn reduction strategies",
+      "Win-back campaigns",
+      "NPS monitoring",
+      "Loyalty program support",
+    ],
     who: "SaaS, subscription brands, membership businesses",
   },
 ];
@@ -121,7 +158,10 @@ export default function ServicesPage() {
         </section>
 
         {/* Service Verticals */}
-        <section style={{ backgroundColor: "#faf8ff" }} className="py-24 lg:py-32">
+        <section
+          style={{ backgroundColor: "#faf8ff" }}
+          className="py-24 lg:py-32"
+        >
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <p
@@ -170,7 +210,10 @@ export default function ServicesPage() {
                   </p>
                   <h3
                     className="text-2xl font-bold mb-3"
-                    style={{ fontFamily: "var(--font-manrope)", color: "#00113a" }}
+                    style={{
+                      fontFamily: "var(--font-manrope)",
+                      color: "#00113a",
+                    }}
                   >
                     {service.title}
                   </h3>
@@ -212,7 +255,7 @@ export default function ServicesPage() {
         </section>
 
         {/* The Aeternum Standard */}
-        <section className="gradient-hero py-24 lg:py-32">
+        {/* <section className="gradient-hero py-24 lg:py-32">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -297,10 +340,13 @@ export default function ServicesPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* FAQs */}
-        <section style={{ backgroundColor: "#f4f3f9" }} className="py-24 lg:py-32">
+        <section
+          style={{ backgroundColor: "#f4f3f9" }}
+          className="py-24 lg:py-32"
+        >
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <p
@@ -337,7 +383,9 @@ export default function ServicesPage() {
                   >
                     {faq.q}
                   </h3>
-                  <p className="text-sm text-[#44464f] leading-relaxed">{faq.a}</p>
+                  <p className="text-sm text-[#44464f] leading-relaxed">
+                    {faq.a}
+                  </p>
                 </div>
               ))}
             </div>
