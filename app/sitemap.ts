@@ -1,24 +1,50 @@
-import type { MetadataRoute } from 'next'
- 
+import type { MetadataRoute } from "next";
+
+const BASE_URL = "https://aeternumtalentsolutions.com";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://acme.com',
+      url: BASE_URL,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 1,
     },
     {
-      url: 'https://acme.com/about',
+      url: `${BASE_URL}/about`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://acme.com/blog',
+      url: `${BASE_URL}/services`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
-  ]
+    {
+      url: `${BASE_URL}/why-aeternum`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/process`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/faqs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+  ];
 }
