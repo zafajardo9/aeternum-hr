@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { mainNavLinks, footerServiceLinks, footerLegalLinks } from "@/lib/nav-links";
+import {
+  mainNavLinks,
+  footerServiceLinks,
+  footerLegalLinks,
+} from "@/lib/nav-links";
 
 export default function Footer() {
   return (
@@ -11,7 +15,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="mb-4">
               <Image
-                src="/images/ATS-lgoo-2.png"
+                src="/images/ATS-logo-white.png"
                 alt="Aeternum Talent Solutions"
                 width={160}
                 height={48}
@@ -20,7 +24,8 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm text-white/60 leading-relaxed">
-              Elevating global operations through architectural talent solutions and high-performance offshore teams.
+              Elevating global operations through architectural talent solutions
+              and high-performance offshore teams.
             </p>
           </div>
 
@@ -96,7 +101,8 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
         >
           <p className="text-sm text-white/50">
-            © {new Date().getFullYear()} Aeternum Talent Solutions. All rights reserved.
+            © {new Date().getFullYear()} Aeternum Talent Solutions. All rights
+            reserved.
           </p>
           <Link
             href="/contact"

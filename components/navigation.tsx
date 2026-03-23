@@ -3,13 +3,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { mainNavLinks } from "@/lib/nav-links";
 
 export default function Navigation() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [rendered, setRendered] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      setRendered(true);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setVisible(true));
+      });
+    } else {
+      setVisible(false);
+      const t = setTimeout(() => setRendered(false), 300);
+      return () => clearTimeout(t);
+    }
+  }, [mobileOpen]);
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6">
@@ -27,7 +42,7 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
-            src="/images/ATS-logo-1.png"
+            src="/images/ATS-text-white.png"
             alt="Aeternum Talent Solutions"
             width={140}
             height={40}
@@ -45,12 +60,15 @@ export default function Navigation() {
                 <Link
                   href={link.href}
                   className="text-sm font-medium transition-colors"
-                  style={{ color: isActive ? "#fed65b" : "rgba(255,255,255,0.75)" }}
+                  style={{
+                    color: isActive ? "#fed65b" : "rgba(255,255,255,0.75)",
+                  }}
                   onMouseEnter={(e) => {
                     if (!isActive) e.currentTarget.style.color = "#ffffff";
                   }}
                   onMouseLeave={(e) => {
-                    if (!isActive) e.currentTarget.style.color = "rgba(255,255,255,0.75)";
+                    if (!isActive)
+                      e.currentTarget.style.color = "rgba(255,255,255,0.75)";
                   }}
                 >
                   {link.label}
@@ -83,7 +101,7 @@ export default function Navigation() {
       </div>
 
       {/* Mobile dropdown — floating card */}
-      {mobileOpen && (
+      {rendered && (
         <div
           className="lg:hidden max-w-6xl mx-auto mt-2 rounded-2xl p-5"
           style={{
@@ -92,6 +110,9 @@ export default function Navigation() {
             WebkitBackdropFilter: "blur(20px)",
             border: "1px solid rgba(255, 255, 255, 0.12)",
             boxShadow: "0 8px 32px rgba(0, 17, 58, 0.4)",
+            transition: "opacity 300ms ease, transform 300ms ease",
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(-10px)",
           }}
         >
           <ul className="flex flex-col gap-1 mb-4">
@@ -105,7 +126,9 @@ export default function Navigation() {
                     className="block px-4 py-3 rounded-xl text-sm font-medium transition-colors"
                     style={{
                       color: isActive ? "#fed65b" : "rgba(255,255,255,0.80)",
-                      backgroundColor: isActive ? "rgba(254,214,91,0.08)" : "transparent",
+                      backgroundColor: isActive
+                        ? "rgba(254,214,91,0.08)"
+                        : "transparent",
                     }}
                   >
                     {link.label}

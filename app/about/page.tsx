@@ -2,7 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { ArrowRight, Brain, Network, Zap, CheckCircle, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Brain,
+  Network,
+  Zap,
+  CheckCircle,
+  Users,
+} from "lucide-react";
 
 const differences = [
   {
@@ -37,12 +44,29 @@ const quality = [
   },
 ];
 
-const team: { name: string; role: string; profile_image_url: string | null }[] = [
-  { name: "Marcus Thorne", role: "Chief Executive Officer", profile_image_url: null },
-  { name: "Elena Rodriguez", role: "Head of Global Talent", profile_image_url: null },
-  { name: "Julian Vance", role: "Director of Strategic Accounts", profile_image_url: null },
-  { name: "Sarah Chen", role: "VP of Operations", profile_image_url: null },
-];
+const team: { name: string; role: string; profile_image_url: string | null }[] =
+  [
+    {
+      name: "Diana Rose Arcabal",
+      role: "asdfasdfadf",
+      profile_image_url: "/images/team/diana-arcabal.png",
+    },
+    {
+      name: "Diether Paul Deygabi",
+      role: "Social Media & Brand Growth Lead",
+      profile_image_url: "/images/team/diether-paul.jpg",
+    },
+    {
+      name: "Mark Joshua Bano",
+      role: "Client Relations & Training Manager",
+      profile_image_url: "/images/team/mark-joshua.jpg",
+    },
+    {
+      name: "Miguel Gabriel",
+      role: "Talent Acquisition & Screening Specialist",
+      profile_image_url: "/images/team/miguel-gabriel.jpg",
+    },
+  ];
 
 export default function AboutPage() {
   return (
@@ -50,9 +74,7 @@ export default function AboutPage() {
       <Navigation />
       <main className="">
         {/* Hero */}
-        <section
-          className="gradient-hero py-32 lg:py-40 relative overflow-hidden"
-        >
+        <section className="gradient-hero py-32 lg:py-40 relative overflow-hidden">
           <div
             className="absolute inset-0 opacity-10"
             style={{
@@ -79,16 +101,19 @@ export default function AboutPage() {
                 <span style={{ color: "#fed65b" }}>Enduring Teams.</span>
               </h1>
               <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
-                Aeternum Talent Solutions isn&apos;t just a recruitment firm; we are
-                the strategic partners who build the human infrastructure for
-                tomorrow&apos;s market leaders.
+                Aeternum Talent Solutions isn&apos;t just a recruitment firm; we
+                are the strategic partners who build the human infrastructure
+                for tomorrow&apos;s market leaders.
               </p>
             </div>
           </div>
         </section>
 
         {/* Our Story */}
-        <section style={{ backgroundColor: "#faf8ff" }} className="py-24 lg:py-32">
+        <section
+          style={{ backgroundColor: "#faf8ff" }}
+          className="py-24 lg:py-32"
+        >
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div>
@@ -110,22 +135,22 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-5 text-base text-[#44464f] leading-relaxed">
                   <p>
-                    Born from a desire to move beyond the transactional nature of
-                    the staffing industry, Aeternum was founded on the principle of
-                    &ldquo;Architectural Recruitment.&rdquo; We believe that a team is not
-                    just a collection of skills, but a carefully engineered
-                    structure.
+                    Born from a desire to move beyond the transactional nature
+                    of the staffing industry, Aeternum was founded on the
+                    principle of &ldquo;Architectural Recruitment.&rdquo; We
+                    believe that a team is not just a collection of skills, but
+                    a carefully engineered structure.
                   </p>
                   <p>
-                    Since our inception, we have served as the silent force behind
-                    high-growth businesses, delivering talent that doesn&apos;t just
-                    fill a seat, but evolves the organization — driving sustainable,
-                    long-term success.
+                    Since our inception, we have served as the silent force
+                    behind high-growth businesses, delivering talent that
+                    doesn&apos;t just fill a seat, but evolves the organization
+                    — driving sustainable, long-term success.
                   </p>
                   <p>
-                    We specialize in building stable, high-performing remote teams
-                    with pre-trained Filipino professionals who are ready to
-                    contribute from day one.
+                    We specialize in building stable, high-performing remote
+                    teams with pre-trained Filipino professionals who are ready
+                    to contribute from day one.
                   </p>
                 </div>
               </div>
@@ -147,7 +172,10 @@ export default function AboutPage() {
                   </div>
                   <h3
                     className="text-lg font-bold mb-3"
-                    style={{ fontFamily: "var(--font-manrope)", color: "#00113a" }}
+                    style={{
+                      fontFamily: "var(--font-manrope)",
+                      color: "#00113a",
+                    }}
                   >
                     Our Mission
                   </h3>
@@ -174,7 +202,10 @@ export default function AboutPage() {
                   </div>
                   <h3
                     className="text-lg font-bold mb-3"
-                    style={{ fontFamily: "var(--font-manrope)", color: "#00113a" }}
+                    style={{
+                      fontFamily: "var(--font-manrope)",
+                      color: "#00113a",
+                    }}
                   >
                     Our Vision
                   </h3>
@@ -190,7 +221,10 @@ export default function AboutPage() {
         </section>
 
         {/* The Aeternum Difference */}
-        <section style={{ backgroundColor: "#f4f3f9" }} className="py-24 lg:py-32">
+        <section
+          style={{ backgroundColor: "#f4f3f9" }}
+          className="py-24 lg:py-32"
+        >
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <p
@@ -210,8 +244,8 @@ export default function AboutPage() {
                 The Aeternum Difference
               </h2>
               <p className="text-base text-[#44464f] max-w-xl mx-auto">
-                We go beyond traditional staffing with proprietary systems designed
-                for precision, speed, and long-term success.
+                We go beyond traditional staffing with proprietary systems
+                designed for precision, speed, and long-term success.
               </p>
             </div>
 
@@ -233,11 +267,16 @@ export default function AboutPage() {
                   </div>
                   <h3
                     className="text-xl font-bold mb-3"
-                    style={{ fontFamily: "var(--font-manrope)", color: "#00113a" }}
+                    style={{
+                      fontFamily: "var(--font-manrope)",
+                      color: "#00113a",
+                    }}
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm text-[#44464f] leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-[#44464f] leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -293,7 +332,9 @@ export default function AboutPage() {
                       >
                         {item.title}
                       </h3>
-                      <p className="text-sm text-white/60 leading-relaxed">{item.desc}</p>
+                      <p className="text-sm text-white/60 leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -303,7 +344,10 @@ export default function AboutPage() {
         </section>
 
         {/* Our People */}
-        <section style={{ backgroundColor: "#faf8ff" }} className="py-24 lg:py-32">
+        <section
+          style={{ backgroundColor: "#faf8ff" }}
+          className="py-24 lg:py-32"
+        >
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <p
@@ -338,7 +382,10 @@ export default function AboutPage() {
                     boxShadow: "0 0 60px rgba(26,27,32,0.05)",
                   }}
                 >
-                  <div className="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden shrink-0 relative" style={{ backgroundColor: "#00113a" }}>
+                  <div
+                    className="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden shrink-0 relative"
+                    style={{ backgroundColor: "#00113a" }}
+                  >
                     {member.profile_image_url ? (
                       <Image
                         src={member.profile_image_url}
@@ -367,7 +414,10 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section style={{ backgroundColor: "#f4f3f9" }} className="py-24 lg:py-32">
+        <section
+          style={{ backgroundColor: "#f4f3f9" }}
+          className="py-24 lg:py-32"
+        >
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <p
               className="text-xs font-semibold uppercase tracking-widest mb-4"
@@ -386,8 +436,8 @@ export default function AboutPage() {
               Ready to Architect Your Legacy?
             </h2>
             <p className="text-base text-[#44464f] leading-relaxed mb-10 max-w-2xl mx-auto">
-              Let&apos;s discuss how we can build an elite team that propels your
-              organization toward its highest ambitions.
+              Let&apos;s discuss how we can build an elite team that propels
+              your organization toward its highest ambitions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
