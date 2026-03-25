@@ -1,10 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Facebook, FileText, Instagram, Mail, Phone } from "lucide-react";
+import { contactLinks, socialLinks } from "@/lib/contact-info";
 import {
   mainNavLinks,
   footerServiceLinks,
   footerLegalLinks,
 } from "@/lib/nav-links";
+
+const contactIconMap = {
+  phone: Phone,
+  email: Mail,
+  application: FileText,
+} as const;
+
+const socialIconMap = {
+  instagram: Instagram,
+  facebook: Facebook,
+} as const;
 
 export default function Footer() {
   return (
@@ -27,6 +40,43 @@ export default function Footer() {
               Elevating global operations through architectural talent solutions
               and high-performance offshore teams.
             </p>
+            <div className="mt-6 space-y-3">
+              {contactLinks
+                .filter((item) => item.type !== "application")
+                .map((item) => {
+                  const Icon = contactIconMap[item.type];
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className={`flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors ${
+                        item.type === "email" ? "break-all" : ""
+                      }`}
+                    >
+                      <Icon size={16} />
+                      <span>{item.label}</span>
+                    </a>
+                  );
+                })}
+              <div className="flex items-center gap-3 pt-1">
+                {socialLinks.map((item) => {
+                  const Icon = socialIconMap[item.platform];
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={item.label}
+                      className="flex h-10 w-10 items-center justify-center rounded-full text-white/70 transition-colors hover:text-white"
+                      style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
+                    >
+                      <Icon size={18} />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           {/* Navigation */}

@@ -46,11 +46,11 @@ const quality = [
 
 const team: { name: string; role: string; profile_image_url: string | null }[] =
   [
-    {
-      name: "Diana Rose Arcabal",
-      role: "Operations Coordinator",
-      profile_image_url: "/images/team/diana-arcabal.png",
-    },
+    // {
+    //   name: "Diana Rose Arcabal",
+    //   role: "Operations Coordinator",
+    //   profile_image_url: "/images/team/diana-arcabal.png",
+    // },
     {
       name: "Diether Paul Deygabi",
       role: "Social Media & Brand Growth Lead",

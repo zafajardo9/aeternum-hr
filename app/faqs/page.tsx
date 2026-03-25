@@ -46,7 +46,7 @@ const faqs = [
     items: [
       {
         q: "How long does the hiring process take?",
-        a: "Our streamlined process typically delivers vetted, deployment-ready candidates within 2–4 weeks from the initial discovery call. Complex or senior roles may take slightly longer to ensure the right fit.",
+        a: "Our streamlined process typically delivers vetted, deployment-ready candidates within 1-2 weeks from the initial discovery call. Complex or senior roles may take slightly longer to ensure the right fit.",
       },
       {
         q: "How do I get started?",
@@ -157,15 +157,18 @@ export default function FAQsPage() {
               </h1>
               <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
                 Answers to the most common questions about how Aeternum works,
-                our talent quality, and how we help businesses scale their remote
-                teams.
+                our talent quality, and how we help businesses scale their
+                remote teams.
               </p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
-        <section style={{ backgroundColor: "#faf8ff" }} className="py-24 lg:py-32">
+        <section
+          style={{ backgroundColor: "#faf8ff" }}
+          className="py-24 lg:py-32"
+        >
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             {faqs.map((category) => (
               <div key={category.category} className="mb-16">
@@ -204,8 +207,8 @@ export default function FAQsPage() {
                 Still have questions?
               </h3>
               <p className="text-sm text-[#44464f] mb-6">
-                Our team is happy to answer any questions not covered here.
-                Book a free call and let&apos;s talk.
+                Our team is happy to answer any questions not covered here. Book
+                a free call and let&apos;s talk.
               </p>
               <Link
                 href="/contact"

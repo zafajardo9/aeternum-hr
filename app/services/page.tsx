@@ -100,7 +100,7 @@ const services = [
 const faqs = [
   {
     q: "How quickly can talent be deployed?",
-    a: "Our streamlined process typically delivers vetted, deployment-ready candidates within 2–4 weeks from the initial discovery call, depending on role complexity and availability.",
+    a: "Our streamlined process typically delivers vetted, deployment-ready candidates within 1-2 weeks from the initial discovery call, depending on role complexity and availability.",
   },
   {
     q: "Do you offer coverage for different time zones?",
