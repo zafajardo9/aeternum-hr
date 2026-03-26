@@ -85,7 +85,9 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <div className="animate-fade-in flex-1 flex flex-col">{children}</div>
+      </body>
     </html>
   );
 }

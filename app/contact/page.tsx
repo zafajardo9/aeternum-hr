@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { ArrowRight, Mail, Phone, MapPin, CheckCircle } from "lucide-react";
+import { stats } from "@/lib/stats";
 
 const pathForward = [
   {
@@ -23,13 +24,6 @@ const pathForward = [
   },
 ];
 
-const stats = [
-  { value: "98%", label: "Placement Rate" },
-  { value: "15+", label: "Specializations" },
-  { value: "2–4 wk", label: "Avg. Time to Deploy" },
-  { value: "40%", label: "Lower Attrition" },
-];
-
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
@@ -44,7 +38,7 @@ export default function ContactPage() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -83,19 +77,23 @@ export default function ContactPage() {
                 }}
               >
                 Secure the{" "}
-                <span style={{ color: "#fed65b" }}>Golden Thread</span>{" "}
-                of Talent.
+                <span style={{ color: "#fed65b" }}>Golden Thread</span> of
+                Talent.
               </h1>
               <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
                 Bespoke consultancy for elite talent acquisition. Choose your
-                preferred method of engagement and let&apos;s start building your team.
+                preferred method of engagement and let&apos;s start building
+                your team.
               </p>
             </div>
           </div>
         </section>
 
         {/* Form + Info */}
-        <section style={{ backgroundColor: "#faf8ff" }} className="py-24 lg:py-32">
+        <section
+          style={{ backgroundColor: "#faf8ff" }}
+          className="py-24 lg:py-32"
+        >
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Inquiry Form */}
@@ -117,8 +115,8 @@ export default function ContactPage() {
                   Submit Your Requirements
                 </h2>
                 <p className="text-sm text-[#44464f] mb-8">
-                  Tell us about your business and the talent you need. We&apos;ll get
-                  back to you within 24 hours.
+                  Tell us about your business and the talent you need.
+                  We&apos;ll get back to you within 24 hours.
                 </p>
 
                 {submitted ? (
@@ -145,15 +143,12 @@ export default function ContactPage() {
                       Thank You!
                     </h3>
                     <p className="text-sm text-[#44464f]">
-                      Your inquiry has been received. A member of our team will be
-                      in touch within 24 hours.
+                      Your inquiry has been received. A member of our team will
+                      be in touch within 24 hours.
                     </p>
                   </div>
                 ) : (
-                  <form
-                    onSubmit={handleSubmit}
-                    className="space-y-5"
-                  >
+                  <form onSubmit={handleSubmit} className="space-y-5">
                     <div
                       className="p-8 rounded-2xl space-y-5"
                       style={{
@@ -379,8 +374,8 @@ export default function ContactPage() {
                   Speak With Our Team
                 </h2>
                 <p className="text-sm text-[#44464f] mb-8">
-                  Prefer to talk? Book a free 30-minute strategy call directly with
-                  one of our talent consultants.
+                  Prefer to talk? Book a free 30-minute strategy call directly
+                  with one of our talent consultants.
                 </p>
 
                 {/* Calendar Placeholder */}
@@ -407,8 +402,8 @@ export default function ContactPage() {
                     Book a Free 30-Min Call
                   </h3>
                   <p className="text-sm text-[#44464f] mb-6">
-                    Select a time that works for you and connect with a principal
-                    consultant to discuss your talent needs.
+                    Select a time that works for you and connect with a
+                    principal consultant to discuss your talent needs.
                   </p>
                   <a
                     href="mailto:hello@aeternum.com"
@@ -437,13 +432,13 @@ export default function ContactPage() {
                     {
                       icon: <Mail size={18} />,
                       label: "Email",
-                      value: "hello@aeternum.com",
-                      href: "mailto:hello@aeternum.com",
+                      value: "aeternumtalentsolutions@gmail.com",
+                      href: "mailto:aeternumtalentsolutions@gmail.com",
                     },
                     {
                       icon: <MapPin size={18} />,
-                      label: "Global Hubs",
-                      value: "London · New York · Singapore",
+                      label: "Location",
+                      value: "Manila, Philippines",
                       href: null,
                     },
                   ].map((item) => (
@@ -458,7 +453,9 @@ export default function ContactPage() {
                         {item.icon}
                       </div>
                       <div>
-                        <p className="text-xs text-[#44464f] mb-0.5">{item.label}</p>
+                        <p className="text-xs text-[#44464f] mb-0.5">
+                          {item.label}
+                        </p>
                         {item.href ? (
                           <a
                             href={item.href}

@@ -2,11 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, FileText, Instagram, Mail, Phone } from "lucide-react";
 import { contactLinks, socialLinks } from "@/lib/contact-info";
-import {
-  mainNavLinks,
-  footerServiceLinks,
-  footerLegalLinks,
-} from "@/lib/nav-links";
+import { mainNavLinks, footerLegalLinks } from "@/lib/nav-links";
 
 const contactIconMap = {
   phone: Phone,
@@ -23,7 +19,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: "#00113a" }} className="text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="mb-4">
@@ -90,28 +86,6 @@ export default function Footer() {
             <ul className="space-y-3">
               {mainNavLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/70 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3
-              className="text-xs font-semibold uppercase tracking-widest mb-4"
-              style={{ color: "#fed65b" }}
-            >
-              Services
-            </h3>
-            <ul className="space-y-3">
-              {footerServiceLinks.map((link) => (
-                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-sm text-white/70 hover:text-white transition-colors"

@@ -10,63 +10,14 @@ import {
   CheckCircle,
   Users,
 } from "lucide-react";
+import { team } from "@/lib/team";
+import { differences, quality } from "@/lib/about-data";
 
-const differences = [
-  {
-    icon: <Brain size={28} />,
-    title: "Cognitive Alignment",
-    desc: "We utilize proprietary behavioral assessments to ensure every candidate aligns with your specific organizational DNA, not just the job description.",
-  },
-  {
-    icon: <Network size={28} />,
-    title: "Curated Networks",
-    desc: "Access to an exclusive, non-public talent pool of high-performing individuals who aren't active on traditional job boards.",
-  },
-  {
-    icon: <Zap size={28} />,
-    title: "Precision Velocity",
-    desc: "Our agile framework reduces time-to-hire by 40% while maintaining a placement accuracy that is industry-leading.",
-  },
-];
-
-const quality = [
-  {
-    title: "Multi-Tiered Screening",
-    desc: "Rigorous technical, behavioral, and cultural vetting stages that filter out 98% of applicants.",
-  },
-  {
-    title: "Continuous Upskilling",
-    desc: "Our candidates undergo mandated certification updates to ensure they remain at the cutting edge of their niche.",
-  },
-  {
-    title: "Integration Coaching",
-    desc: "We provide 90-day post-placement coaching to ensure seamless cultural assimilation and early ROI.",
-  },
-];
-
-const team: { name: string; role: string; profile_image_url: string | null }[] =
-  [
-    // {
-    //   name: "Diana Rose Arcabal",
-    //   role: "Operations Coordinator",
-    //   profile_image_url: "/images/team/diana-arcabal.png",
-    // },
-    {
-      name: "Diether Paul Deygabi",
-      role: "Social Media & Brand Growth Lead",
-      profile_image_url: "/images/team/diether-paul.jpg",
-    },
-    {
-      name: "Mark Joshua Bano",
-      role: "Client Relations & Training Manager",
-      profile_image_url: "/images/team/mark-joshua.jpg",
-    },
-    {
-      name: "Miguel Gabriel",
-      role: "Talent Acquisition & Screening Specialist",
-      profile_image_url: "/images/team/miguel-gabriel.jpg",
-    },
-  ];
+const iconMap: Record<string, React.ReactNode> = {
+  Brain: <Brain size={28} />,
+  Network: <Network size={28} />,
+  Zap: <Zap size={28} />,
+};
 
 export default function AboutPage() {
   return (
@@ -263,7 +214,7 @@ export default function AboutPage() {
                     className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
                     style={{ backgroundColor: "#00113a", color: "#fed65b" }}
                   >
-                    {item.icon}
+                    {iconMap[item.icon]}
                   </div>
                   <h3
                     className="text-xl font-bold mb-3"
@@ -349,41 +300,36 @@ export default function AboutPage() {
           className="py-24 lg:py-32"
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <p
-                className="text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color: "#735c00" }}
-              >
-                Our Leadership
-              </p>
-              <h2
-                className="text-4xl lg:text-5xl font-extrabold mb-4"
-                style={{
-                  fontFamily: "var(--font-manrope)",
-                  color: "#00113a",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                Our People
-              </h2>
-              <p className="text-base text-[#44464f] max-w-xl mx-auto">
-                The masters behind the craft. Our consultants bring decades of
-                specialized expertise to your search.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {team.map((member) => (
-                <div
-                  key={member.name}
-                  className="p-8 rounded-2xl text-center"
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12">
+              <div className="text-left mb-6 lg:mb-0">
+                <p
+                  className="text-xs font-semibold uppercase tracking-widest mb-4"
+                  style={{ color: "#735c00" }}
+                >
+                  Our Leadership
+                </p>
+                <h2
+                  className="text-4xl lg:text-5xl font-extrabold mb-4"
                   style={{
-                    backgroundColor: "#ffffff",
-                    boxShadow: "0 0 60px rgba(26,27,32,0.05)",
+                    fontFamily: "var(--font-manrope)",
+                    color: "#00113a",
+                    letterSpacing: "-0.02em",
                   }}
                 >
+                  Our People
+                </h2>
+                <p className="text-base text-[#44464f] max-w-xl">
+                  The masters behind the craft. Our consultants bring deep
+                  specialized expertise to your search.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {team.map((member) => (
+                <div key={member.name} className="text-left">
                   <div
-                    className="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden shrink-0 relative"
+                    className="aspect-[3/4] w-full rounded-lg overflow-hidden mb-4 relative"
                     style={{ backgroundColor: "#00113a" }}
                   >
                     {member.profile_image_url ? (
@@ -392,11 +338,11 @@ export default function AboutPage() {
                         alt={member.name}
                         fill
                         className="object-cover"
-                        sizes="96px"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <Users size={32} style={{ color: "#fed65b" }} />
+                        <Users size={40} style={{ color: "#fed65b" }} />
                       </div>
                     )}
                   </div>
