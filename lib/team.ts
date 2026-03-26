@@ -14,11 +14,11 @@ export const team: TeamMember[] = [
   {
     name: "Diether Paul Deygabi",
     role: "Growth & Brand Director / Operations Coordinator",
-    profile_image_url: "/images/team/diether-paul.jpg",
+    profile_image_url: "/images/team/diether-paul-2.jpeg",
   },
   {
     name: "Miguel Gabriel",
     role: "Talent Acquisition & Screening Specialist",
-    profile_image_url: "/images/team/miguel-gabriel.jpg",
+    profile_image_url: "/images/team/miguel-gabriel-2.jpeg",
   },
 ];

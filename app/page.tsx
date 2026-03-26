@@ -86,7 +86,7 @@ export default function Home() {
               {/* Stats */}
               <div className="flex flex-wrap gap-6">
                 {[
-                  { label: "Top 1% Talent", sub: "Vetted for precision" },
+                  { label: "Top 3% Talent", sub: "Vetted for precision" },
                   { label: "Performance Ready", sub: "Pre-trained experts" },
                   { label: "40% Lower Attrition", sub: "vs. industry average" },
                 ].map((stat) => (
