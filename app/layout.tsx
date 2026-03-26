@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -88,6 +89,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <div className="animate-fade-in flex-1 flex flex-col">{children}</div>
       </body>
+      <GoogleAnalytics gaId="G-DCE8MH7B9C" />
     </html>
   );
 }
