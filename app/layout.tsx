@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { organizationSchema, localBusinessSchema } from "@/lib/seo";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -33,9 +34,16 @@ export const metadata: Metadata = {
     "talent solutions",
     "remote teams",
     "business outsourcing",
+    "virtual assistant Philippines",
+    "customer support outsourcing",
+    "executive assistant remote",
   ],
   authors: [{ name: "Aeternum Talent Solutions", url: BASE_URL }],
   creator: "Aeternum Talent Solutions",
+  publisher: "Aeternum Talent Solutions",
+  alternates: {
+    canonical: BASE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -73,8 +81,13 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
+  verification: {
+    google: "googleabf9c133fd74f699",
+  },
+  category: "business",
 };
 
 export default function RootLayout({
@@ -95,6 +108,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NDT9P9V8');`}
         </Script>
+        <Script
+          id="schema-org-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <Script
+          id="schema-org-local-business"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <noscript>

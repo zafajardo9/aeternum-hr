@@ -9,6 +9,24 @@ import {
   ShoppingBag,
   Calendar,
 } from "lucide-react";
+import { generatePageMetadata, generateFAQSchema } from "@/lib/seo";
+import Script from "next/script";
+
+export const metadata = generatePageMetadata({
+  title: "Our Services | Remote Staffing Solutions",
+  description:
+    "Explore Aeternum's specialized remote staffing services: Customer Support, Sales Support, Executive VAs, Ecommerce Staff, and Administrative Support.",
+  path: "/services",
+  keywords: [
+    "remote staffing services",
+    "customer support outsourcing",
+    "virtual assistant services",
+    "sales support teams",
+    "ecommerce support staff",
+    "executive assistant services",
+    "administrative support",
+  ],
+});
 
 const services = [
   {
@@ -117,8 +135,17 @@ const faqs = [
 ];
 
 export default function ServicesPage() {
+  const faqSchema = generateFAQSchema(
+    faqs.map((faq) => ({ question: faq.q, answer: faq.a })),
+  );
+
   return (
     <>
+      <Script
+        id="services-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navigation />
       <main className="">
         {/* Hero */}

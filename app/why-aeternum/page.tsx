@@ -12,6 +12,21 @@ import {
   Award,
 } from "lucide-react";
 import { reasons, industries, roles } from "@/lib/why-aeternum-data";
+import { generatePageMetadata } from "@/lib/seo";
+
+export const metadata = generatePageMetadata({
+  title: "Why Aeternum | The Aeternum Advantage",
+  description:
+    "Discover why businesses choose Aeternum: 40% higher retention, top 3% talent, pre-trained professionals, and seamless integration.",
+  path: "/why-aeternum",
+  keywords: [
+    "why choose Aeternum",
+    "Aeternum advantage",
+    "remote staffing benefits",
+    "Filipino talent benefits",
+    "low attrition staffing",
+  ],
+});
 
 const iconMap: Record<string, React.ReactNode> = {
   TrendingUp: <TrendingUp size={28} />,

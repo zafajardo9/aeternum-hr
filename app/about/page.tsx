@@ -12,6 +12,21 @@ import {
 } from "lucide-react";
 import { team } from "@/lib/team";
 import { differences, quality } from "@/lib/about-data";
+import { generatePageMetadata } from "@/lib/seo";
+
+export const metadata = generatePageMetadata({
+  title: "About Us | Our Story, Mission & Team",
+  description:
+    "Learn about Aeternum Talent Solutions' mission to build high-performing remote teams with pre-trained Filipino professionals. Meet our leadership team.",
+  path: "/about",
+  keywords: [
+    "about Aeternum",
+    "remote staffing company",
+    "Filipino talent agency",
+    "Aeternum team",
+    "staffing agency Philippines",
+  ],
+});
 
 const iconMap: Record<string, React.ReactNode> = {
   Brain: <Brain size={28} />,

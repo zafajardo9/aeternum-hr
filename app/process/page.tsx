@@ -2,6 +2,21 @@ import Link from "next/link";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { generatePageMetadata } from "@/lib/seo";
+
+export const metadata = generatePageMetadata({
+  title: "Our Process | How We Work",
+  description:
+    "Learn about Aeternum's 4-step talent acquisition process: Discovery, Assessment, Sourcing, and Training. Get deployment-ready candidates in 1-2 weeks.",
+  path: "/process",
+  keywords: [
+    "talent acquisition process",
+    "hiring process",
+    "remote staffing process",
+    "Aeternum process",
+    "vetting process",
+  ],
+});
 
 const steps = [
   {
@@ -120,7 +135,10 @@ export default function ProcessPage() {
         </section>
 
         {/* Steps */}
-        <section style={{ backgroundColor: "#faf8ff" }} className="py-24 lg:py-32">
+        <section
+          style={{ backgroundColor: "#faf8ff" }}
+          className="py-24 lg:py-32"
+        >
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="space-y-8">
               {steps.map((item, i) => (
@@ -210,8 +228,8 @@ export default function ProcessPage() {
               Begin Your Discovery Call.
             </h2>
             <p className="text-base text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
-              Step one is simple — let&apos;s talk. Book a free 30-minute call and
-              start building your elite remote team today.
+              Step one is simple — let&apos;s talk. Book a free 30-minute call
+              and start building your elite remote team today.
             </p>
             <Link
               href="/contact"
